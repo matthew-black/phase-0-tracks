@@ -1,7 +1,3 @@
-# Hi Tyler! I figured I'd make the change in this file obvious...
-
-So, here's [me at my coolest](https://youtu.be/HFGs78sd-Dg)
-
 ##Git Definition
 **Instructions: ** Define each of the following Git concepts
 
