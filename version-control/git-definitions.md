@@ -1,6 +1,5 @@
-# Git Definitions
-
-**Instructions: ** Define each of the following Git concepts.
+##Git Definition
+**Instructions: ** Define each of the following Git concepts
 
 * *What is version control?  Why is it useful?*
     - Version control allows you to keep a stable, um, version of whatever project you're working on, so that you're free to develop new features or refine what you've already made without having to worry about breaking anything. I can see it also being super helpful to be able to time-travel backwards through the changes you've made if you're trying to debug something. (Not that I know how to debug anything yet.)
