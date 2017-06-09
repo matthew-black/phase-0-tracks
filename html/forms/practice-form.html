@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Forms</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<form action="success.html" method="post">
+	
+	<div>
+	<label>Name:</label>
+	<input type="text" name="name">
+	</div>
+
+	<div>
+	<label>Email:</label>
+	<input type="email" name="email">
+	</div>
+
+	<div>
+	<label>Password:</label>
+	<input type="password" name="password">
+	</div>
+
+	<div>
+	<label>Address:</label>
+	<input type="text" name="address">
+	</div>
+
+	<div>
+	<label>Medication delivery time:</label>
+		<select name="delivery">
+			<option value="am">AM</option>
+			<option value="pm">PM</option>
+			<option value="pm">ASAP</option>		
+		</select>
+	</div>
+
+	<div>
+        <label for="msg">Please add any additional comments</label>
+        <textarea id="msg" name="user_message"></textarea>
+    </div>
+
+	<div class="button">
+	<button type="submit">Send your message</button>
+	</div>
+
+	</form>
+</body>
+
+</html>
