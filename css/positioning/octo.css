@@ -1,0 +1,26 @@
+#octopus {
+  padding-top:100px;
+  width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+
+#hat {
+  width: 400px;
+  display: block;
+  margin: auto;
+  position: relative;
+  bottom: 360px;
+  right: 20px;
+}
+
+
+#glasses {
+  width: 400px;
+  display: block;
+  margin: auto;
+  position: relative;
+  bottom: 363px;
+  left: 42px;
+}
