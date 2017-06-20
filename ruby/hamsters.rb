@@ -1,3 +1,5 @@
+# This program will obtain and diplay hamster data.
+
 puts "What's your hamster's name?"
 ham_name = gets.chomp
 
@@ -17,10 +19,10 @@ puts "Your hamster is named #{ham_name}!"
 puts "Your hamster's volume level is #{ham_volume} out of 10!"
 puts "Your hamster's fur color is #{ham_fur_color}!"
 puts "Your hamster is a good candidate for adoption? #{ham_adopt}!"
-
   if ham_age == ""
-      ham_age = nil
-      puts "You're not sure of your hamster's age!"
+    ham_age = nil
+    puts "You're not sure of your hamster's age!"
   else
-      puts "Your hamster is about #{ham_age.to_i} years old!"
+    ham_age = ham_age.to_i
+    puts "Your hamster is about #{ham_age} years old!"
   end
