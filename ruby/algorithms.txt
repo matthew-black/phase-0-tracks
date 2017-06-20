@@ -1,0 +1,44 @@
+# How-to-Ride-an-Elevator Algorithm
+
+1. Find elevator and locate the button that calls elevator
+2. If going up
+    * Press button with "Up" or an up arrow **^** on it
+3. If going down
+    * Press button with "Down" or a down arrow **v** on it
+4. Wait for elevator door to open
+5. Enter elevator
+6. Locate buttons inside elevator
+7. If the button that is labelled with your destination's floor number is lit up
+    * Skip to step #10
+8. Scan buttons to find the one that matches your destination's floor number
+9. Press corresponding button
+10. Wait for elevator to arrive at your floor
+11. When door opens
+    * If there is a bear
+       * Do not exit
+       * Press "close door" button
+          * Make yourself as big as possible while waiting for door to close
+       * Notify proper authorities and postpone elevator ride 
+    * Otherwise, if there is no bear
+       * Exit elevator
+12. Congratulations, you have ridden an elevator
+
+
+# How-to-Wear-Sandals Algorithm
+
+1. Locate a pair of sandals
+2. Place right foot in a sandal that is designed for a right foot
+   * If it's comfortable, these are the sandals for you
+      * Unless your feet are different sizes
+         * In which case, repeat step #2 with your left foot and a left-foot-sandal
+      * If you're in a store, make sure you remove sandals and purchase them
+3. Ask self if you respect self
+   * If yes, ensure you are not wearing socks
+   * If no, ensure you are wearing socks
+      * If a vehement no, ensure you are wearing long, neon green socks
+4. Put your sandals on
+   * Right sandal goes on right foot
+   * Left sandal goes on left foot
+5. Venture out into the world with your now-properly-equipped sandals
+   * Unless not clothed
+      * Put on clothing and go back to step #5, while keeping step #3 in mind
