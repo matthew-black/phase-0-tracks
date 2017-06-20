@@ -1,3 +1,5 @@
+# This program will obtain and diplay hamster data.
+
 puts "What's your hamster's name?"
 ham_name = gets.chomp
 
