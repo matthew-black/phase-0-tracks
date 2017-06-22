@@ -1,5 +1,79 @@
 /*GPS 2.1 Style Sheet*/
 
-h1 {
-  background-color: blue;
+body {
+  background-color: #1C90F3;
+}
+
+header h1 {
+  font-family: Helvetica;
+  font-size: 3.7em;
+  letter-spacing: .2em;
+  border-top: #F3A01C solid 20px;
+  border-bottom: #A66600 solid 20px;
+  text-align: center;
+  background-color: #37A3FF;
+  max-width:90%;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+#blurb{
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 98%;
+  margin-bottom: 1em;
+  background-color: #37A3FF;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.column-1, .column-2 {
+  display: inline-block;
+  width: 47%;
+  min-height: 1150px;
+  vertical-align: top;
+  margin: 1%;
+  margin-bottom: 2%;
+  padding: 0% 2%;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.column-1 {
+  background-color:#F3A01C;
+}
+
+.column-2 {
+  background-color: #A66600;
+  float: right;
+}
+
+.column-1 h2 {
+  color: #0A5EA6;
+  border-bottom: #A66600 solid 5px;
+  font-family: Helvetica;
+  letter-spacing: .1em;
+ }
+
+.column-2 h2 {
+  color: #37A3FF;
+  border-bottom: #F3A01C solid 5px;
+  font-family: Helvetica;
+  letter-spacing: .1em;
+ }
+
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  width: 97%;
+  margin-bottom: 1em;
+  text-align: center;
+  background-color: #37A3FF;
+  border-radius: 10px;
 }
