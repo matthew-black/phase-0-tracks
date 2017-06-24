@@ -1,3 +1,9 @@
+# SECRET AGENTS!!! THE BEST KIND OF AGENTS!!!
+
+# This contains two methods and a short bit of code that
+# takes user input and runs it through one of the methods
+
+
 # Encryption Method:
 
 # Take a string
@@ -26,7 +32,7 @@ def encrypt(string1)
 end
 
 
-#Decrypt Method:
+#Decryption Method:
 
 # Take a string
 # For each character in string, determine index value (based on alphabet)
@@ -34,7 +40,6 @@ end
 # Convert index value back to letter
 # Add each letter to a new string
 
-#Decryption method:
 def decrypt(string2)
   count = 0
   alphabet = "abcdefghijklmnopqrstuvwxyz"
