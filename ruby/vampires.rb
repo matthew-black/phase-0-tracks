@@ -4,10 +4,10 @@
 # Gets input from user, converts string response
 #   immediately to booleans where necessary
 puts "How many prospective employees will be processed?"
-  employees = gets.to_i
+  number_of_employees = gets.to_i
 
 count = 0
-while employees > count
+while number_of_employees > count
   puts "What is your name?"
     name_is = gets.chomp
 
