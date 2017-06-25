@@ -80,11 +80,12 @@ while number_of_employees > count
 
   # This is a loop that will continue to ask the user to input their
   # allergies until they either provide a response of 'sunshine' or
-  # 'none'. It's a cool feature, but I think it's whack that it overrides
+  # 'done'. It's a cool feature, but I think it's whack that it overrides
   # some of the stronger logic located above, especially because I went
   # to high school with a girl who was allergic to the sun. (And she was
-  # most definitely not a vampire. If this was my program to design, I'd
-  # definltey put it on line 72.)
+  # most definitely not a vampire.) If this was my program to design, I'd
+  # say that this question loop would make way more sense if it was placed on
+  # line 72.
   puts "Please type your allergies one at a time using lowercase letters, pressing enter after each. When you're finished, type 'done' and press enter."
   stop = false
   while stop == false
