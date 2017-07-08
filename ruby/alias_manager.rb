@@ -154,20 +154,29 @@ end
 # User interface:
 puts "Welcome to the world's most advanced alias creation program."
 puts "Please type a first and last name. Then, press enter to receive an alias."
-puts "Type 'quit' when you've finished creating aliases."
+puts "When you've finished creating aliases, type 'quit' and press enter."
+names_and_aliases = [[],[]]
 not_done = true
 while not_done
-  print "First and last name: "
+  print "Name: "
   user_response = gets.chomp
   if user_response.downcase == "quit"
-    puts "Thanks for using the world's most advanced alias creation program."
     not_done = false
   else
     names_string = first_last_swap(user_response)
     alias_string = name_to_alias(names_string)
-    puts "#{user_response}'s alias is #{alias_string}"
+    names_and_aliases[0] << "#{user_response}"
+    names_and_aliases[1] << "#{alias_string}"
   end
 end
+  # Test call to ensure user_response and alias_string
+  # have been correctly stored in array:
+    # p names_and_aliases
+count = 0
+while count < names_and_aliases[0].length
+  puts "Name: #{names_and_aliases[0][count]} == Alias: #{names_and_aliases[1][count]}"
+  count += 1
+end
 
-
-
+# Finished if you can sort out the edge cases. "U, u, Z, and z" all break
+# the program if they're used in a user response.
