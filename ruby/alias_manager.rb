@@ -25,21 +25,21 @@
 
 # -------------------------------------------------------- #
 
-# Alias Manager Program
+#ALIAS MANAGER PROGRAM
 
 
-# Method that flips the order of first name and
-# last name when provided in a single string:
+  #METHOD THAT FLIPS THE ORDER OF FIRST NAME AND
+  #LAST NAME WHEN PROVIDED IN A SINGLE STRING:
 def first_last_swap (full_name_string)
     swapped_full_name_array = full_name_string.split(' ').rotate(1)
     swapped_full_name_string = swapped_full_name_array.join(' ')
 end
 
 
-# Method that changes the name string into
-# an alias:
+  #METHOD THAT CHANGES THE NAME STRING INTO
+  #AN ALIAS:
 def name_to_alias(string)
-  # Variables to be used inside the while loop:
+    #--variables to be used inside the while loop--#
   vowels_downcase = "aeiou"
   vowels_downcase_array = vowels_downcase.split('')
   vowels_upcase = "AEIOU"
@@ -48,7 +48,7 @@ def name_to_alias(string)
   consonants_downcase_array = consonants_downcase.split('')
   consonants_upcase = "BCDFGHJKLMNPQRSTVWXYZ"
   consonants_upcase_array = consonants_upcase.split('')
-  # Loop that iterates through and modifies a string:
+    #--loop that iterates through and modifies a string--#
   alias_string = ""
   count = 0
   while count < string.length
@@ -98,7 +98,7 @@ alias_string
 end
 
 
-# User interface:
+  #USER INTERFACE:
 puts "Welcome to the world's most advanced alias creation program."
 puts " "
 puts "Please type a first and last name. Then, press enter to receive an alias."
@@ -107,8 +107,8 @@ puts "When you've finished creating aliases, type 'quit' and press enter."
 puts " "
 names_and_aliases = [[],[]]
 not_done = true
-# Uses above methods to take a full name from a user, convert it
-# into an alias, then store the names and aliases in an array:
+  #--uses above methods to take a full name from a user, convert it--#
+  #--into an alias, then store the names and aliases in an array--#
 while not_done
   print "Name: "
   user_response = gets.chomp
@@ -121,7 +121,7 @@ while not_done
     names_and_aliases[1] << "#{alias_string}"
   end
 end
-# Retrieves and displays names and aliases that have been created:
+  #--retrieves and displays names and aliases that have been created--#
 puts " "
 puts "Here are the names and aliases you've generated:"
 puts " "
