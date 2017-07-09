@@ -58,14 +58,14 @@ def name_to_alias(string)
     elsif string[count].downcase == "z"
       if string[count] == "z"
         alias_string[count] = "b"
-      elsif string[count] == "Z"
+      else
         alias_string[count] = "B"
       end
       count += 1
     elsif string[count].downcase == "u"
       if string[count] == "u"
         alias_string[count] = "a"
-      elsif
+      else
         alias_string[count] = "A"
       end
       count += 1
