@@ -23,71 +23,10 @@
 # and consonants? And use a method that looks to
 # see if a variable contains a specific character.)
 
+# -------------------------------------------------------- #
 
-#Alias Manager Program!
+# Alias Manager Program
 
-# Flip the order of first name and last
-# name when provided in a single string:
-def first_last_swap (full_name_string)
-    swapped_full_name_array = full_name_string.split(' ').rotate(1)
-    swapped_full_name_string = swapped_full_name_array.join(' ')
-end
-
-
-# Change the name string into an alias:
-def name_to_alias(string)
-  # Create all the variables/arrays required by the
-  # if/elsif statements:
-  vowels_downcase = "aeiou"
-  vowels_downcase_array = vowels_downcase.split('')
-  vowels_upcase = "AEIOU"
-  vowels_upcase_array = vowels_upcase.split('')
-  consonants_downcase = "bcdfghjklmnpqrstvwxyz"
-  consonants_downcase_array = consonants_downcase.split('')
-  consonants_upcase = "BCDFGHJKLMNPQRSTVWXYZ"
-  consonants_upcase_array = consonants_upcase.split('')
-  # Loop through the original string, use arrays that
-  # contain character sets to determine what logic to
-  # apply in adding a new character to the alias_string
-  # variable:
-  alias_string = ""
-  count = 0
-  while count < string.length
-    if string[count] == " "
-      alias_string[count] = " "
-      count +=1
-    elsif vowels_downcase_array.include? string[count]
-      converted = vowels_downcase.index(string[count]) + 1
-      alias_letter = vowels_downcase[converted]
-      alias_string[count] = alias_letter
-      count += 1
-    elsif consonants_downcase_array.include? string[count]
-      converted = consonants_downcase.index(string[count]) + 1
-      alias_letter = consonants_downcase[converted]
-      alias_string[count] = alias_letter
-      count += 1
-    elsif vowels_upcase_array.include? string[count]
-      converted = vowels_downcase.index(string[count]) + 1
-      alias_letter = vowels_upcase[converted]
-      alias_string[count] = alias_letter
-      count += 1
-    elsif consonants_upcase_array.include? string[count]
-      converted = consonants_upcase.index(string[count]) + 1
-      alias_letter = consonants_upcase[converted]
-      alias_string[count] = alias_letter
-      count += 1
-    else
-      alias_string[count] = " "
-    end
-  end
-alias_string
-end
-
-  # Test calls to make sure all the above stuff works!
-    # names_string = first_last_swap("Matthew Black")
-    # puts name_to_alias(names_string)
-    # names_string = first_last_swap("Felicia Torres")
-    # puts name_to_alias(names_string)
 
 # Method that flips the order of first name and
 # last name when provided in a single string:
@@ -100,8 +39,7 @@ end
 # Method that changes the name string into
 # an alias:
 def name_to_alias(string)
-  # All the variables/arrays required by the
-  # if/elsif statements:
+  # Variables to be used inside the while loop:
   vowels_downcase = "aeiou"
   vowels_downcase_array = vowels_downcase.split('')
   vowels_upcase = "AEIOU"
@@ -110,14 +48,27 @@ def name_to_alias(string)
   consonants_downcase_array = consonants_downcase.split('')
   consonants_upcase = "BCDFGHJKLMNPQRSTVWXYZ"
   consonants_upcase_array = consonants_upcase.split('')
-  # The logic stuff that builds a new string
-  # based on the specs for 5.5:
+  # Loop that iterates through and modifies a string:
   alias_string = ""
   count = 0
   while count < string.length
     if string[count] == " "
       alias_string[count] = " "
       count +=1
+    elsif string[count].downcase == "z"
+      if string[count] == "z"
+        alias_string[count] = "b"
+      elsif string[count] == "Z"
+        alias_string[count] = "B"
+      end
+      count += 1
+    elsif string[count].downcase == "u"
+      if string[count] == "u"
+        alias_string[count] = "a"
+      elsif
+        alias_string[count] = "A"
+      end
+      count += 1
     elsif vowels_downcase_array.include? string[count]
       converted = vowels_downcase.index(string[count]) + 1
       alias_letter = vowels_downcase[converted]
@@ -129,7 +80,7 @@ def name_to_alias(string)
       alias_string[count] = alias_letter
       count += 1
     elsif vowels_upcase_array.include? string[count]
-      converted = vowels_downcase.index(string[count]) + 1
+      converted = vowels_upcase.index(string[count]) + 1
       alias_letter = vowels_upcase[converted]
       alias_string[count] = alias_letter
       count += 1
@@ -140,23 +91,24 @@ def name_to_alias(string)
       count += 1
     else
       alias_string[count] = " "
+      count += 1
     end
   end
 alias_string
 end
 
-  # Test calls to make sure all the above stuff works!
-    # names_string = first_last_swap("Matthew Black")
-    # puts name_to_alias(names_string)
-    # names_string = first_last_swap("Felicia Torres")
-    # puts name_to_alias(names_string)
 
 # User interface:
 puts "Welcome to the world's most advanced alias creation program."
+puts " "
 puts "Please type a first and last name. Then, press enter to receive an alias."
+puts " "
 puts "When you've finished creating aliases, type 'quit' and press enter."
+puts " "
 names_and_aliases = [[],[]]
 not_done = true
+# Uses above methods to take a full name from a user, convert it
+# into an alias, then store the names and aliases in an array:
 while not_done
   print "Name: "
   user_response = gets.chomp
@@ -169,14 +121,14 @@ while not_done
     names_and_aliases[1] << "#{alias_string}"
   end
 end
-  # Test call to ensure user_response and alias_string
-  # have been correctly stored in array:
-    # p names_and_aliases
+# Retrieves and displays names and aliases that have been created:
+puts " "
+puts "Here are the names and aliases you've generated:"
+puts " "
 count = 0
 while count < names_and_aliases[0].length
-  puts "Name: #{names_and_aliases[0][count]} == Alias: #{names_and_aliases[1][count]}"
+  puts "Name: #{names_and_aliases[0][count]}  ==  Alias: #{names_and_aliases[1][count]}"
   count += 1
 end
-
-# Finished if you can sort out the edge cases. "U, u, Z, and z" all break
-# the program if they're used in a user response.
+puts " "
+puts "Thank you for using the world's most advanced alias creation program."
