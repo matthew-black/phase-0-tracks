@@ -1,4 +1,6 @@
-# Array Drills
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#  Array Drills
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
                               "shotgun", "compass", "CB radio", "batteries"]
@@ -7,15 +9,50 @@ zombie_apocalypse_supplies = ["hatchet", "rations", "water jug", "binoculars",
 # printing each item in the array separated by an asterisk
 # ----
 
+zombie_apocalypse_supplies.each { |supply| print "#{supply} # " }
+
 # 2. Create a method to see if a particular item (string) is in the
 # zombie_apocalypse_supplies using #each.
 # For instance: are boots in your list of supplies?
 # ----
 
+def array_search(string, array)
+    search = false
+    array.each do |x|
+      if x == string
+        search = true
+      end
+    end
+search
+end
+    ## Test Calls:
+      # p array_search("boots", zombie_apocalypse_supplies)
+      # p array_search("compass", zombie_apocalypse_supplies)
+      # p array_search("rations", zombie_apocalypse_supplies)
+      # p array_search("accordion", zombie_apocalypse_supplies)
+
 # 3. You can't carry too many things, you've only got room in your pack for 5.
 # Remove items in your zombie_apocalypse_supplies in any way you'd like,
 # leaving only 5, using #each.
 # ----
+
+  #--I was going to be more specific about which items to delete,
+  #--but I figured it actually made the most sense to get rid of the three
+  #--items that happened to be the "last" three things in the array.
+  #--I'm assuming that if I'm just packing my gear now, it's still
+  #--pretty early in the game. Rather than worrying about where I am,
+  #--or trying to get in touch with other survivors, I think it'll be
+  #--best to just focus on making through the first few weeks.
+def limit_supplies_to_5(array)
+  array.each do
+    if array.size > 5
+      array.delete_at(-1)
+    end
+  end
+end
+limit_supplies_to_5(zombie_apocalypse_supplies)
+    # Test Call:
+      # p zombie_apocalypse_supplies
 
 # 4. You found another survivor! This means you can combine your supplies.
 # Create a new combined supplies list out of your zombie_apocalypse_supplies
@@ -26,7 +63,18 @@ other_survivor_supplies = [ "warm clothes", "rations", "compass", "camp stove",
                             "solar battery", "flashlight"]
 # ----
 
-# Hash Drills
+def supply_combine(array1, array2)
+  array3 = array1 + array2
+  array3 = array3.uniq!
+end
+combined_survivor_supplies = supply_combine(zombie_apocalypse_supplies, other_survivor_supplies)
+
+    ## Test Call:
+      # p combined_survivor_supplies
+
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+#  Hash Drills
+#  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 extinct_animals = {
   "Passenger Pigeon" => 1914,
