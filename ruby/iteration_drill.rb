@@ -90,9 +90,13 @@ extinct_animals = {
 # with a dash in between the key and value, and an asterisk between each pair.
 # ----
 
+# extinct_animals.each { |animal, extinct_date| print " #{animal} - #{extinct_date} #"  }
+
 # 2. Keep only animals in extinct_animals if they were extinct before
 # the year 2000, using #each.
 # ----
+
+extinct_animals.each do |animal, extinct_date|
 
 # 3. Our calculations were completely off, turns out all of those animals went
 # extinct 3 years before the date provided. Update the values in extinct_animals
