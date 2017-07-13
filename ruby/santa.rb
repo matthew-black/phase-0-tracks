@@ -1,5 +1,6 @@
-#--RELEASE 6.3: ATTRIBUTES--#
+#----RELEASE 6.3: ATTRIBUTES---#
 
+  #--Creates the Santa class--#
 class Santa
 
   def initialize(gender, ethnicity)
@@ -19,14 +20,24 @@ class Santa
   end
 
 end
+  # #--Test calls for Santa class methods--#
+  #   steve = Santa.new("male", "Belgian")
+  #   steve.speak
+  #   steve.eat_milk_and_cookies("snickerdoodle")
 
-  # #--Test calls--#
-    # steve = Santa.new("male", "Belgian")
-    # steve.speak
-    # steve.eat_milk_and_cookies("snickerdoodle")
 
-santas = []
+    #--Creates a specified number of random Santas--#
 def santa_maker(number_of_santas)
-
+  santa_factory = []
+  possible_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+  possible_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+  number_of_santas.times  {santa_factory << Santa.new(possible_genders[rand(0..6)], possible_ethnicities[rand(0..6)])}
+  santa_factory
 end
+  # #--Test calls for santa_maker method--#
+  #   santas = santa_maker(3)
+  #   p santas
+
+
+
 
