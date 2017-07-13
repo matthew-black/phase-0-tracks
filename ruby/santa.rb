@@ -2,8 +2,12 @@
 
 class Santa
 
-  def initialize
+  def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
+    @gender = gender
+    @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
   end
 
   def speak
@@ -17,7 +21,12 @@ class Santa
 end
 
   # #--Test calls--#
-  #   steve = Santa.new
-  #   steve.speak
-  #   steve.eat_milk_and_cookies("snickerdoodle")
+    # steve = Santa.new("male", "Belgian")
+    # steve.speak
+    # steve.eat_milk_and_cookies("snickerdoodle")
+
+santas = []
+def santa_maker(number_of_santas)
+
+end
 
