@@ -2,6 +2,9 @@
 
   #--Creates the Santa class--#
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :gender
+
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
     @gender = gender
@@ -10,20 +13,8 @@ class Santa
     @age = 0
   end
 
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
   def celebrate_birthday
     @age = @age + 1
-  end
-
-  def gender=(new_gender)
-    @gender = new_gender
   end
 
   def speak
@@ -43,18 +34,18 @@ end
   #   steve.speak
   #   steve.eat_milk_and_cookies("snickerdoodle")
     # #--Test calls for attribute-changing and getter/setter methods--#
-      # betsy = Santa.new("female", "Icelandic")
-      # p betsy.celebrate_birthday
-      # p betsy.get_mad_at("Rudolph")
-      # p betsy.gender = "female"
-      # p betsy.age
-      # p betsy.ethnicity
+      betsy = Santa.new("female", "Icelandic")
+      p betsy.celebrate_birthday
+      p betsy.get_mad_at("Rudolph")
+      p betsy.gender = "robot"
+      p betsy.age
+      p betsy.ethnicity
 
 
     #--Creates a specified number of random Santas--#
 def santa_maker(number_of_santas)
   santa_factory = []
-  possible_genders = ["agender", "female", "bigender", "male", "quite mysterious", "gender fluid", "N/A"]
+  possible_genders = ["agender", "female", "bigender", "male", "robot", "gender fluid", "N/A"]
   possible_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
   number_of_santas.times  {santa_factory << Santa.new(possible_genders[rand(0..6)], possible_ethnicities[rand(0..6)])}
   santa_factory
