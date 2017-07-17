@@ -4,6 +4,8 @@
 ## instead of displaying a message and reprompting with
 ## more lines in terminal, just upcase the duplicate letter
 ## in the @guess_record to alert the user of its existence.
+## Reprint the game screen in this process to avoid duplicate
+## "Guess a letter:" prompts that clog up the UI.
 ## Then, once a valid guess has been entered, make sure to
 ## downcase duplicate guess letter.
 
@@ -102,8 +104,8 @@ class Game
       end
   end
 
-  def show_game_progress
-    if @guesses_remaining > 1
+  def show_game_progress #-possibly combine with get_guess to make one-#
+    if @guesses_remaining > 1 #-big method called game_logic?-#
       puts "You have #{@guesses_remaining} guesses left."
     elsif @guesses_remaining == 1
       puts "You're down to one guess! Choose wisely."
