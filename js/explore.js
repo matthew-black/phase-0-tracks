@@ -63,3 +63,5 @@ if (javaScriptMastered == false) {
   else {
     console.log("When did you master JavaScript!?")
   }
+
+  // Yay for JavaScript!
