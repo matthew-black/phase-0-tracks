@@ -28,23 +28,23 @@ class Game
       if @solution_array[index] == " "      #-spaces and
         @trying_to_solve[index] = " "       #-punctuation
       end
-      if @solution_array[index] == "."      #-spaces and
-        @trying_to_solve[index] = "."       #-punctuation
+      if @solution_array[index] == "."
+        @trying_to_solve[index] = "."
       end
-      if @solution_array[index] == ","      #-spaces and
-        @trying_to_solve[index] = ","       #-punctuation
+      if @solution_array[index] == ","
+        @trying_to_solve[index] = ","
       end
-      if @solution_array[index] == "?"      #-spaces and
-        @trying_to_solve[index] = "?"       #-punctuation
+      if @solution_array[index] == "?"      #-can add more
+        @trying_to_solve[index] = "?"       #-things to this!
       end
-      if @solution_array[index] == "!"      #-spaces and
-        @trying_to_solve[index] = "!"       #-punctuation
+      if @solution_array[index] == "!"
+        @trying_to_solve[index] = "!"
       end
-      if @solution_array[index] == "'"      #-spaces and
-        @trying_to_solve[index] = "'"       #-punctuation
+      if @solution_array[index] == "'"
+        @trying_to_solve[index] = "'"
       end
-      if @solution_array[index] == "-"      #-spaces and
-        @trying_to_solve[index] = "-"       #-punctuation
+      if @solution_array[index] == "-"
+        @trying_to_solve[index] = "-"
       end
     end
 
@@ -110,7 +110,7 @@ class Game
     elsif @guesses_remaining == 1
       puts "You're down to one guess! Choose wisely."
     end
-    puts "Here's the word you're trying to guess: "
+    puts "Here's the word/phrase you're trying to guess: "
     @trying_to_solve.size.times do |index|
       if index == 0
         print "    #{@trying_to_solve[0]}"
