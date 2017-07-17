@@ -1,5 +1,11 @@
 ## 6.7 SOLO CHALLENGE: A GAME CLASS
 
+## Feature for later: When a duplicate letter is guessed,
+## instead of displaying a message and reprompting with
+## more lines in terminal, just upcase the duplicate letter
+## in the @guess_record to alert the user of its existence.
+## Then, once a valid guess has been entered, make sure to
+## downcase duplicate guess letter.
 
 ###--Game Class--###
 
@@ -16,6 +22,30 @@ class Game
     @solution_string = gets.chomp
     @solution_array = @solution_string.downcase.split('')
     @trying_to_solve = @solution_array.map{"_"}
+    @solution_array.length.times do |index| #-pre-fill w/
+      if @solution_array[index] == " "      #-spaces and
+        @trying_to_solve[index] = " "       #-punctuation
+      end
+      if @solution_array[index] == "."      #-spaces and
+        @trying_to_solve[index] = "."       #-punctuation
+      end
+      if @solution_array[index] == ","      #-spaces and
+        @trying_to_solve[index] = ","       #-punctuation
+      end
+      if @solution_array[index] == "?"      #-spaces and
+        @trying_to_solve[index] = "?"       #-punctuation
+      end
+      if @solution_array[index] == "!"      #-spaces and
+        @trying_to_solve[index] = "!"       #-punctuation
+      end
+      if @solution_array[index] == "'"      #-spaces and
+        @trying_to_solve[index] = "'"       #-punctuation
+      end
+      if @solution_array[index] == "-"      #-spaces and
+        @trying_to_solve[index] = "-"       #-punctuation
+      end
+    end
+
     if @solution_array.length < 5
       @guesses_remaining = 6
     else
@@ -23,13 +53,29 @@ class Game
     end
   end
 
-  def get_guess
-    @valid_guess = false
-    while @valid_guess == false
+  def get_guess #-this can be smarter, self-#
+    @valid_guess = false #-you need to fix the repeated printings-#
+    while @valid_guess == false #-of duplicate gueses-#
+      if @guess_record[1] == nil #-this bit needs to be one chunk-#
+        puts "You haven't made any guesses yet." #-that flows-#
+      else                              #-as one chunk/module-#
+        puts "Here are the letters you've guessed:" #lkj
+          @guess_record.length.times do |index|
+            if index == 0
+              print " #{@guess_record[1]}"
+            else
+              print " #{@guess_record[index + 1]}"
+            end
+          end
+          puts " "
+      end
+        # make list of guessed letters here
+        # use method to not display duplicates
+        # or letters stored as answers
       print "Guess a letter: "
-      @guess = gets.chomp
+      @guess = gets.chomp.downcase
         if @guess_record.include?(@guess)
-          puts "'#{@guess}' has already been guessed."
+          puts "'#{@guess}' has already been guessed." #lkj
           @valid_guess = false
         else
           @guess_record << @guess
@@ -80,7 +126,7 @@ end
 
   #--Initialize instance of game class and get solution--#
 word_game = Game.new
-puts "Enter a word for your opponent to guess:"
+puts "Enter a word or phrase for your opponent to guess:"
 word_game.get_solution
 word_game.clear
 
@@ -93,7 +139,7 @@ while !word_game.is_over
   word_game.check_guess
   if word_game.solution_array == word_game.trying_to_solve
     word_game.clear
-    puts "Nice work! The word was '#{word_game.solution_string}'!"
+    puts "Nice work! The word/phrase was: '#{word_game.solution_string}'"
       if word_game.guesses_remaining == 1
         puts "You solved it with only one guess remaining!"
       else
@@ -104,7 +150,7 @@ while !word_game.is_over
     word_game.clear
     puts "GAME OVER!"
     puts " "
-    puts "The word you failed to guess was:"
+    puts "The word/phrase you failed to guess was:"
     puts "  #{word_game.solution_string}"
     word_game.is_over = true
   end
