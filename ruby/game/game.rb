@@ -157,4 +157,3 @@ while !word_game.is_over
     word_game.is_over = true
   end
 end
-###--/User Interface--###
