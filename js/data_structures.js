@@ -11,9 +11,7 @@ for (var x = 0; x < horses.length; x++){
   horseTeam[horses[x]] = colors[x];
 }
 
-// console.log(horseTeam)
-
-// At the bottom of your data_structures.js file, write a constructor function for a car. Give it a few different properties of various data types, including at least one function. Demonstrate that your function works by creating a few cars with it.
+console.log(horseTeam)
 
 function Car(color, year, make, model) {
   this.color = color;
@@ -28,3 +26,13 @@ var car1 = new Car("Black", "2007", "Honda", "Civic");
 
 console.log(car1);
 car1.honk();
+
+for (var key in horseTeam){
+  if (horseTeam.hasOwnProperty(key)) {
+    console.log(horseTeam[key]);
+  }
+}
+
+for (var [key, value] of Object.entries(horseTeam)) {
+  console.log(key + " is " + value + "!");
+  }
