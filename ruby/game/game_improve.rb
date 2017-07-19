@@ -70,8 +70,10 @@ class Game
   end
 
   def get_guess
+
     @valid_guess = false
     @not_duplicate_guess = true
+
     while @valid_guess == false
       puts "Here's what you're trying to guess:"
       @trying_to_solve.size.times do |index|
@@ -96,9 +98,9 @@ class Game
                 print "  #{@guess_record[1]}"
               end
             else
-              # if (@guess == @duplicate_guesses[-1])
-              #   print " #{@guess_record[index + 1].upcase}!"
-              # else
+              #if #--ADD LOGIC HERE TO UPCASE DUPLICATE GUESSES!
+                #print " #{@guess_record[count + 1].upcase}"
+              #else
                 print " #{@guess_record[count + 1]}"
               #end
             end
@@ -149,32 +151,32 @@ end
 ###--User Interface--###
 
   #--Initialize instance of game class and get solution--#
-word_game = Game.new
-puts "Enter a word or phrase for your opponent to guess:"
-word_game.get_solution
-word_game.clear
+  word_game = Game.new
+  puts "Enter a word or phrase for your opponent to guess:"
+  word_game.get_solution
+  word_game.clear
 
-  #--Continue to promp for new guesses--#
-  #--until game is solved or failed--#
-while !word_game.is_over
-  word_game.clear # possibly all you need to do is put the clear screen inside the logic...
-  word_game.get_guess
-  word_game.check_guess
-  if word_game.solution_array == word_game.trying_to_solve
-    word_game.clear
-    puts "Nice work! The word/phrase was: '#{word_game.solution_string}'"
-      if word_game.guesses_remaining == 1
-        puts "You solved it with only one guess remaining!"
-      else
-        puts "You solved it with #{word_game.guesses_remaining} guesses remaining."
-      end
-    word_game.is_over = true
-  elsif word_game.guesses_remaining == 0
-    word_game.clear
-    puts "GAME OVER!"
-    puts " "
-    puts "The word/phrase you failed to guess was:"
-    puts "  #{word_game.solution_string}"
-    word_game.is_over = true
+    #--Continue to promp for new guesses--#
+    #--until game is solved or failed--#
+  while !word_game.is_over
+    word_game.clear # possibly all you need to do is put the clear screen inside the logic...
+    word_game.get_guess
+    word_game.check_guess
+    if word_game.solution_array == word_game.trying_to_solve
+      word_game.clear
+      puts "Nice work! The word/phrase was: '#{word_game.solution_string}'"
+        if word_game.guesses_remaining == 1
+          puts "You solved it with only one guess remaining!"
+        else
+          puts "You solved it with #{word_game.guesses_remaining} guesses remaining."
+        end
+      word_game.is_over = true
+    elsif word_game.guesses_remaining == 0
+      word_game.clear
+      puts "GAME OVER!"
+      puts " "
+      puts "The word/phrase you failed to guess was:"
+      puts "  #{word_game.solution_string}"
+      word_game.is_over = true
+    end
   end
-end
