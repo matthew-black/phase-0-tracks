@@ -26,6 +26,7 @@ class Game
   end
 
   def get_solution
+    puts "Enter a word or phrase for your opponent to guess:"
     @solution_string = gets.chomp
     @solution_array = @solution_string.downcase.split('')
     @trying_to_solve = @solution_array.map{"_"}
@@ -70,11 +71,10 @@ class Game
   end
 
   def get_guess
-
     @valid_guess = false
     @not_duplicate_guess = true
-
     while @valid_guess == false
+      clear
       puts "Here's what you're trying to guess:"
       @trying_to_solve.size.times do |index|
         if index == 0
@@ -93,16 +93,16 @@ class Game
               if @guess_record.length == 2
                 print "  #{@guess_record[1]}"
               elsif (@guess == @guess_record[1])
-                print "  #{@guess_record[1].upcase}!"
+                print "  #{@guess_record[1].upcase}"
               else
                 print "  #{@guess_record[1]}"
               end
             else
-              #if #--ADD LOGIC HERE TO UPCASE DUPLICATE GUESSES!
-                #print " #{@guess_record[count + 1].upcase}"
-              #else
+              if @guess != @guess_record[-1] && (@all_guesses[-1] == @guess_record[count + 1])
+                print " #{@guess_record[count + 1].upcase}"
+              else
                 print " #{@guess_record[count + 1]}"
-              #end
+              end
             end
           end
       end
@@ -121,13 +121,11 @@ class Game
       if @guess_record.include?(@guess)
         @valid_guess = false
         @not_duplicate_guess = false
-        clear
       else
         @guess_record << @guess
         @guesses_remaining -= 1
         @valid_guess = true
         @not_duplicate_guess = true
-        clear
       end
     end
   end
@@ -145,6 +143,10 @@ class Game
       end
   end
 
+  # def game_complete
+    # put 161 through 181 in here?
+  # end
+
 end
 
 
@@ -152,14 +154,11 @@ end
 
   #--Initialize instance of game class and get solution--#
   word_game = Game.new
-  puts "Enter a word or phrase for your opponent to guess:"
   word_game.get_solution
-  word_game.clear
 
     #--Continue to promp for new guesses--#
     #--until game is solved or failed--#
   while !word_game.is_over
-    word_game.clear # possibly all you need to do is put the clear screen inside the logic...
     word_game.get_guess
     word_game.check_guess
     if word_game.solution_array == word_game.trying_to_solve
