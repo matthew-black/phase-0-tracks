@@ -18,8 +18,8 @@ class VirusPredictor
     #--Literally just calling predicted_deaths and speed_of_spread,
     #--probz just to simplify the user interface code.
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths#(@population_density, @population, @state)
+    speed_of_spread#(@population_density, @state)
   end
 
   private
