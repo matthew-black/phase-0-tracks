@@ -10,7 +10,6 @@
 ## downcase duplicate guess letter.
 
 ###--Game Class--###
-
 class Game
   attr_accessor :is_over
   attr_reader :solution_string, :solution_array, :trying_to_solve, :guess, :guess_record, :guesses_remaining, :all_guesses
@@ -143,39 +142,36 @@ class Game
       end
   end
 
-  # def game_complete
-    # put 161 through 181 in here?
-  # end
+  def is_game_complete?
+    if @solution_array == @trying_to_solve
+      clear
+      puts "Nice work! The word/phrase was: '#{@solution_string}'"
+        if @guesses_remaining == 1
+          puts "You solved it with only one guess remaining!"
+        else
+          puts "You solved it with #{@guesses_remaining} guesses remaining."
+        end
+      @is_over = true
+    elsif @guesses_remaining == 0
+      clear
+      puts "GAME OVER!"
+      puts " "
+      puts "The word/phrase you failed to guess was:"
+      puts "  #{@solution_string}"
+      @is_over = true
+    end
+  end
 
 end
 
 
 ###--User Interface--###
-
-  #--Initialize instance of game class and get solution--#
+    #-get input from player 1
   word_game = Game.new
   word_game.get_solution
-
-    #--Continue to promp for new guesses--#
-    #--until game is solved or failed--#
+    #-player 2 plays game
   while !word_game.is_over
     word_game.get_guess
     word_game.check_guess
-    if word_game.solution_array == word_game.trying_to_solve
-      word_game.clear
-      puts "Nice work! The word/phrase was: '#{word_game.solution_string}'"
-        if word_game.guesses_remaining == 1
-          puts "You solved it with only one guess remaining!"
-        else
-          puts "You solved it with #{word_game.guesses_remaining} guesses remaining."
-        end
-      word_game.is_over = true
-    elsif word_game.guesses_remaining == 0
-      word_game.clear
-      puts "GAME OVER!"
-      puts " "
-      puts "The word/phrase you failed to guess was:"
-      puts "  #{word_game.solution_string}"
-      word_game.is_over = true
-    end
+    word_game.is_game_complete?
   end
