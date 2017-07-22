@@ -19,7 +19,7 @@ class VirusPredictor
   end
 
     #--literally just calling predicted_deaths and speed_of_spread,
-    #--probz just to simplify the user interface code
+    #--probz just to simplify the driver code
   def virus_effects
     predicted_deaths
     speed_of_spread
