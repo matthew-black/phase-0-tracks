@@ -70,7 +70,7 @@ end
 
 # DRIVER CODE
 
-  #--iterate through the STATE_STATE constant, using the virus_effects
+  #--iterate through the STATE_DATA constant, using the virus_effects
   #--method to print the depressing casualty outlook for each of the 50 states
 STATE_DATA.each do |state, value|
   state = VirusPredictor.new(state, value[:population_density], value[:population])
