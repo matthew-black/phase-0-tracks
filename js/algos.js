@@ -59,9 +59,9 @@ function findTheLongestString(array) {
 
 //--Function:
 function keyValuePairChecker(object1, object2) {
-  isMatch = false
-  keys1 = Object.keys(object1)
-  keys2 = Object.keys(object2)
+  isMatch = false;
+  keys1 = Object.keys(object1);
+  keys2 = Object.keys(object2);
   for (var x = 0; x < keys1.length; x++) {
     for (var y = 0; y < keys2.length; y++) {
       if (keys1[x] == keys2[y]) {
@@ -71,7 +71,7 @@ function keyValuePairChecker(object1, object2) {
       }
     }
   }
-  return isMatch
+  return isMatch;
 }
   //--Driver Code:
   var dog = {name: "Henry", age: 7, color: "Brown", legs: 4};
@@ -114,9 +114,9 @@ function makeFakeWords(integer) {
   //--Driver Code:
   for (var x = 0; x < 10; x++) {
     var array = makeFakeWords(5);
-    console.log("An array of randomness:")
+    console.log("An array of randomness:");
     console.log(array);
-    console.log("The longest word in this array is:")
+    console.log("The longest word in this array is:");
     console.log(findTheLongestString(array));
-    console.log(" ")
+    console.log(" ");
   }
