@@ -91,19 +91,19 @@ end
 # ------ for the 50 hashes contained by the block.
 #
 # --- require_relative lets you require a file by using a relative file path,
-# ------ while require only lets you load a file if its part of the current
+# ------ while require only lets you load a file if it's part of the current
 # ------ file's load path.
 #
 # --- #each is the method that is used to iterate through a hash. You can also
 # ------ get more specific by using #each_key or #each_value if you only
 # ------ wanted to return keys or values. #each_pair is also a thing, but it
-# ------ seems functionally identical to #each...maybe I'm missing something...
+# ------ seems functionally identical to #each...maybe I'm missing something?
 #
 # --- Well, at first the only thing that stood out to us as totally bonkers
 # ------ was the "speed = 0" and "speed << integer_here" thing. Eventually we
 # ------ realized that the two methods inside virus_effects didn't need to have
 # ------ any arguments passed in since they were working with variables that
-# ------ would be filled when a new VirusPredictor class instance is generated
+# ------ would be filled when a new VirusPredictor class instance is generated.
 #
 # --- Davina made it a priority for us to have very rigid driver/navigator roles
 # ------ for this challenge. My preference is to have the roles be a little more
