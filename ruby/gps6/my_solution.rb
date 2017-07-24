@@ -25,7 +25,7 @@ class VirusPredictor
     speed_of_spread
   end
 
-  private #--makes the below methods on available to class methods
+  private #--makes the below methods unavailable to class methods
           #--controls/limits the scope
 
     #--calculates how many people are gonna die, based on
