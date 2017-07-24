@@ -111,12 +111,12 @@ function makeFakeWords(integer) {
   return fakeWords;
 }
 
-//--Driver Code:
-for (var x = 0; x < 10; x++) {
-  var array = makeFakeWords(5);
-  console.log("An array of randomness:")
-  console.log(array);
-  console.log("The longest word in this array is:")
-  console.log(findTheLongestString(array));
-  console.log(" ")
-}
+  //--Driver Code:
+  for (var x = 0; x < 10; x++) {
+    var array = makeFakeWords(5);
+    console.log("An array of randomness:")
+    console.log(array);
+    console.log("The longest word in this array is:")
+    console.log(findTheLongestString(array));
+    console.log(" ")
+  }
