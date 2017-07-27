@@ -1,5 +1,6 @@
 1.
   command:  SELECT * FROM corgis;
+  
   output:   1|Cheerio|11|Sable|1
             2|Loafy|5|Tri-Color|2
             3|Toffee|3|Red|2
@@ -12,8 +13,9 @@
   command:  UPDATE corgis SET age=6 WHERE age=5;
 
 
-3. (Had to first DROP corgis and CREATE corgis--forgot FOREIGN KEY. Derp.)
+3.
   command:  SELECT * FROM corgis, breeds WHERE corgis.breed = breeds.id;
+  
   output:   1|Cheerio|11|Sable|1|1|Pembroke Welsh
             2|Loafy|6|Tri-Color|2|2|Cardigan Welsh
             3|Toffee|3|Red|2|2|Cardigan Welsh
@@ -25,6 +27,7 @@
 4.
   command:  SELECT corgis.name, corgis.color, breeds.breed FROM corgis JOIN breeds ON
             corgis.breed = breeds.id;
+  
   output:   Cheerio|Sable|Pembroke Welsh
             Loafy|Tri-Color|Cardigan Welsh
             Toffee|Red|Cardigan Welsh
@@ -38,8 +41,9 @@
             (Peace out, Timothy. You were a good dog.)
 
 
-6. (The Cross Join)
+6.
   command:  SELECT * FROM corgis CROSS JOIN breeds;
+  
   output:   1|Cheerio|11|Sable|1|1|Pembroke Welsh
             1|Cheerio|11|Sable|1|2|Cardigan Welsh
             2|Loafy|6|Tri-Color|2|1|Pembroke Welsh
@@ -53,36 +57,9 @@
 
 
 7.
-  command:  lsakfjlkdajflkdsajf
-
-
-
-
-COPY PASTE GARBAGE....
-
-SELECT ... FROM table1 LEFT OUTER JOIN table2 ON conditional_expression ...
-
-
-SELECT players.name, teams.name FROM players JOIN teams ON players.team_id = teams.id;
-
-
-Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
-
-
-
-SELECT * FROM players, teams WHERE players.team_id = teams.id;
-
-
-INSERT INTO rabbits (name, age, fluffy) VALUES ("Gumdrop", 2, "true");
-
-
-<name_of_column_to_create> <DATA_TYPE_OF_COLUMN_TO_CREATE>,
-FOREIGN KEY(<name_of_column_to_create>) REFERENCES <existing_table_name>(<existing_column_name>)
-
-CREATE TABLE rabbits (
-  name VARCHAR(255),
-  age INT,
-  fluffy BOOLEAN
-);
-
-Display the information in both tables using one query.
+  command:  SELECT corgis.name, corgis.color, breeds.breed FROM corgis, breeds
+		WHERE corgis.breed = 1
+		AND corgis.breed = breeds.id;
+  
+  output:   Cheerio|Sable|Pembroke Welsh
+            Michael Scott|Tri-Color|Pembroke Welsh
