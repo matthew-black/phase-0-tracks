@@ -1,0 +1,30 @@
+Release 2: View a Many-to-Many Relationship
+
+2.You've joined two tables before. How do you join three?
+
+SELECT * FROM users join reviews ON users.id = reviews.user_id
+   ...> join businesses ON reviews.business_id = businesses.id;
+
+5|Holly|Berry|1|5|Great Food!|3|5|3|The Beagle Nightclub
+2|Mandy|Kaling|2|1|Terrible service|6|2|6|Sushi World
+2|Mandy|Kaling|3|3|Cheap food and great service!|3|2|3|The Beagle Nightclub
+1|Bradford|Pitt|4|3|Okay food|4|1|4|Lotus Yoga
+
+3. There are some repetitive columns if we choose to view all fields. Choose instead to just view the user's names, the business name, the star rating, and the comment.
+
+SELECT users.firstname, users.lastname, businesses.name, reviews.stars, reviews.comment FROM users join reviews ON users.id = reviews.user_id
+   ...> join businesses ON reviews.business_id = businesses.id;
+
+Holly|Berry|The Beagle Nightclub|5|Great Food!
+Mandy|Kaling|Sushi World|1|Terrible service
+Mandy|Kaling|The Beagle Nightclub|3|Cheap food and great service!
+Bradford|Pitt|Lotus Yoga|3|Okay food
+
+4. How do you view the data of all three tables for just one particular business? 
+
+SELECT users.firstname, users.lastname, businesses.name, reviews.stars, reviews.comment FROM users join reviews ON users.id = reviews.user_id
+   ...> join businesses ON reviews.business_id = businesses.id
+   ...> WHERE businesses.name="The Beagle Nightclub";
+
+Holly|Berry|The Beagle Nightclub|5|Great Food!
+Mandy|Kaling|The Beagle Nightclub|3|Cheap food and great service!
