@@ -7,14 +7,14 @@ header {
   text-align: center;
   margin: auto;
   font-size: 200%;
-  border-radius: 15px;
   background-color: #37A3FF;
+  border-radius: 20px;
   color: #064479;
   width: 40%;
+
 }
 
 table {
-/*  width: 75%;*/
   margin: auto;
   border: 5px solid #064479;
 }
@@ -27,3 +27,6 @@ td {
   border: 0px;
   background-color: #1C90F3;
 }
+
+
+// .
