@@ -2,10 +2,12 @@
 // cell of an empty table with a new background color
 // when a single table cell is clicked.
 
+
 // Based on which CSS class has been assigned, groups all
 // table cells into two variables:
 var lightCells = document.getElementsByClassName("light");
 var darkCells = document.getElementsByClassName("dark");
+var allCells = document.getElementsByTagName("td");
 
 
 // Creates functions that will change the background color
@@ -27,4 +29,20 @@ for (var i = 0; i < lightCells.length; i++) {
 
 for (var i = 0; i < darkCells.length; i++) {
   darkCells[i].addEventListener("click", showDark);
+}
+
+
+// A function that evaluates to false when each table
+// cell has been clicked:
+function notDone() {
+  for (var i = 0; i < allCells.length; i++) {
+    if (allCells[i].style.backgroundColor == "") {
+      var notAllClicked = true;
+      break;
+    }
+    else {
+      notAllClicked = false;
+    }
+  }
+  return notAllClicked;
 }
