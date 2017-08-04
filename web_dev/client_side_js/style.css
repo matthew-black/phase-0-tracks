@@ -17,7 +17,7 @@ header {
 table {
 /*  width: 75%;*/
   margin: auto;
-  border: 1px solid #37A3FF;
+  border: 5px solid #064479;
 }
 
 td {
@@ -28,11 +28,3 @@ td {
   border: 0px;
   background-color: #1C90F3;
 }
-
-/*.light {
-  background-color: #37A3FF;
-}
-
-.dark {
-  background-color: #064479;
-}*/

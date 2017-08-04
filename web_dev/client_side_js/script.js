@@ -1,21 +1,30 @@
+// This script makes it possible to "light up" each
+// cell of an empty table with a new background color
+// when a single table cell is clicked.
 
+// Based on which CSS class has been assigned, groups all
+// table cells into two variables:
 var lightCells = document.getElementsByClassName("light");
 var darkCells = document.getElementsByClassName("dark");
 
 
-function showLight() {
-  lightCells[0].style.backgroundColor = "#37A3FF";
+// Creates functions that will change the background color
+// of table cells:
+function showLight(event) {
+  event.target.style.backgroundColor = "#37A3FF";
 }
 
-function showDark() {
-  darkCells[0].style.backgroundColor = "#064479";
+function showDark(event) {
+  event.target.style.backgroundColor = "#064479";
 }
 
-lightCells[0].addEventListener("click", showLight);
 
+// Creates event listeners that will call the relevant function
+// when a specific table cell is clicked:
+for (var i = 0; i < lightCells.length; i++) {
+  lightCells[i].addEventListener("click", showLight);
+}
 
-darkCells[0].addEventListener("click", showDark)
-
-
-// lightCells[0].style.backgroundColor = "#37A3FF";
-// darkCells[0].style.backgroundColor = "#064479";
+for (var i = 0; i < darkCells.length; i++) {
+  darkCells[i].addEventListener("click", showDark);
+}
