@@ -8,3 +8,20 @@ impose an extra constraint on my usual routine:
 When you come up against a question that you'd like an
 answer to, and if that question is *not essential*, you may
 only spend 15 minutes on it.
+
+
+
+# Helpful Stuff:
+* Shortcut for the document ready thingy: https://d.pr/i/hJnRhM
+```
+    $(function(){
+        // --- code
+    });
+```
+
+* Something else:
+```
+    $(function(){
+        // --- code
+    });
+```
