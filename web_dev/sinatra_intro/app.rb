@@ -9,7 +9,11 @@ db.results_as_hash = true
 # add a query parameter
 # GET /
 get '/' do
-  "#{params[:name]} is #{params[:age]} years old."
+  if params[:name] && params[:age]
+    "#{params[:name]} is #{params[:age]} years old."
+  else
+    "Hello world!"
+  end
 end
 
 # write a GET route with
@@ -39,8 +43,38 @@ end
 
 # write a GET route that retrieves
 # a particular student
-
 get '/students/:id' do
   student = db.execute("SELECT * FROM students WHERE id=?", [params[:id]])[0]
   student.to_s
+end
+
+# write a GET route that displays an address
+get '/contact/' do
+#-set by query parameters:
+  if params[:name] && params[:address] && params[:city] && params[:state] && params[:zip]
+    "#{params[:name]}<br>
+    #{params[:address]}<br>
+    #{params[:city]}, #{params[:state]} #{params[:zip]}<br>"
+#-default:
+  else
+    "Timothy the Tooth<br>
+    123 Happy Mouth Circle<br>
+    Lasangatown, TX 29381<br>"
+  end
+end
+
+# write a route that can take a person's name as a query parameter
+get '/great_job/' do
+  if params[:name]
+    "Good job, #{params[:name]}!"
+  else
+    "Good job!"
+  end
+end
+
+# write a route that returns the sum of two numbers passed in
+# as route parameters
+get '/add/:numb1/plus/:numb2' do
+  sum = params[:numb1].to_i + params[:numb2].to_i
+  sum.to_s
 end
