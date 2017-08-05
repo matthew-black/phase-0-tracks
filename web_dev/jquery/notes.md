@@ -11,15 +11,8 @@ only spend 15 minutes on it.
 
 
 
-# Helpful Stuff:
-* Shortcut for the document ready thingy: https://d.pr/i/hJnRhM
-```
-    $(function(){
-        // --- code
-    });
-```
 
-* Something else:
+* Shortcut for the document ready thingy: https://d.pr/i/hJnRhM
 ```
     $(function(){
         // --- code

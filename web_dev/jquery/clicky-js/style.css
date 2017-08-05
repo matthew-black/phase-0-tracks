@@ -11,7 +11,7 @@ header {
   border-radius: 20px;
   color: #064479;
   width: 50%;
-
+  position: relative;
 }
 
 table {
@@ -27,6 +27,13 @@ td {
   border: 0px;
   background-color: #1C90F3;
 }
+  /*--Test Properties for JQuery*/
+/*p {
+  position: relative;
+}
+h1{
+  position: relative;
+}*/
 
 /*footer {
   position: fixed;
