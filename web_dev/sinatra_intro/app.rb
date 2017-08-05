@@ -63,7 +63,7 @@ get '/contact/' do
   end
 end
 
-# write a route that can take a person's name as a query parameter
+# write a GET route that can take a person's name as a query parameter
 get '/great_job/' do
   if params[:name]
     "Good job, #{params[:name]}!"
@@ -72,7 +72,7 @@ get '/great_job/' do
   end
 end
 
-# write a route that returns the sum of two numbers passed in
+# write a GET route that returns the sum of two numbers passed in
 # as route parameters
 get '/add/:numb1/plus/:numb2' do
   sum = params[:numb1].to_i + params[:numb2].to_i
