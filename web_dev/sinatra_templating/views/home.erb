@@ -1,15 +1,18 @@
+<!DOCTYPE html>
 <html>
 <head>
   <title>Student Management System</title>
+  <link href='https://fonts.googleapis.com/css?family=Amatic SC' rel='stylesheet'>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <h1>Student Management System</h1>
   <p>Welcome to the student management system.</p>
   <p>Click <a href="students/new">here</a> to create a new student.</p>
+  <p>Click <a href="students/delete">here</a> to delete an existing student.</p>
   <ul>
     <% @students.each do |student| %>
-      <li><%= student['name'] %>, <%= student['age'] %></li>
+      <li><span><%= student['name'] %>, <%= student['age'] %>, <%= student['campus'] %></span></li>
     <% end %>
   </ul>
 </body>

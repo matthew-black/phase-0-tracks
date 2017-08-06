@@ -1,3 +1,29 @@
 body {
-  font-family: Helvetica;
+  position: absolute;
+  top: 5%;
+  left: 15%;
+  font-family: "Lucida Console", Monaco, monospace;
+  background-color: grey;
+}
+
+h1 {
+  position: relative;
+  right: 10%;
+  font-size: 400%;
+  font-family: Amatic SC;
+  color: navy;
+  margin: 0px;
+/*  border: 5px dashed white;
+*/
+  border-radius: 15px;
+  padding: 9px;
+  background-color: white;
+}
+
+li {
+  color: navy;
+}
+
+span {
+  color :black;
 }
